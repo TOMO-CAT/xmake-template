@@ -25,8 +25,7 @@ for i = 2, 25 do
     target("disable_parallel_fail." .. tostring(i), function()
         set_kind("object")
         add_files(path.join("src", tostring(i) .. ".cc"))
-        -- add_deps("disable_parallel_fail." .. tostring(i-1))
-        add_deps("disable_parallel_fail.1")
+        add_deps("disable_parallel_fail." .. tostring(i-1))
     end)
 end
 
@@ -34,7 +33,5 @@ target("main", function()
     set_kind("binary")
     set_default(false)
     add_files("main.cc")
-    for i = 1, 25 do
-        add_deps("disable_parallel_fail." .. tostring(i))
-    end
+    add_deps("disable_parallel_fail.25")
 end)
