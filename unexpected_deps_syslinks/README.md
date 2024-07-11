@@ -15,3 +15,5 @@ xmake v2.9.2+HEAD.a298a7d88
 ```bash
 xmake f -c
 ```
+
+![](./image.png)
